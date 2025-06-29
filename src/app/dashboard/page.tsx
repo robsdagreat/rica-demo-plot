@@ -3,7 +3,16 @@ import { useState } from 'react';
 import Chart from '@/components/Chart';
 import Nav from '@/components/Nav';
 import plotData from '@/../public/data/plot_data.json';
-import type { ChartData, ChartOptions } from 'chart.js';
+import type { ChartData, ChartOptions, PluginOptionsByType } from 'chart.js';
+
+interface PlotData {
+  name: string;
+  description: string;
+  crop: { name: string; spacing: string };
+  inputs: { npk_applied: number; urea_applied: number; dap_applied: number };
+  measurements: Record<string, number | null>;
+  nutrient_loss: Record<string, number | null>;
+}
 
 const metricOptions = [
   { value: 'sediment_soil_collected', label: 'Soil Erosion (t/ha)' },
@@ -98,6 +107,8 @@ export default function DashboardPage() {
   const seasonData = allSeasons.find((s) => s.season_name === selectedSeason);
   const metricInfo = metricOptions.find((m) => m.value === selectedMetric);
 
+  const plots = (seasonData?.plots ?? []) as PlotData[];
+
   // Conversion for t/ha (kg/180)
   const convertToTha = (kg: number) => kg == null ? null : +(kg / 180).toFixed(2);
 
@@ -105,11 +116,15 @@ export default function DashboardPage() {
   let chartData: ChartData<'bar'>;
   if (showNpk) {
     chartData = {
-      labels: seasonData?.plots.map((p) => p.name),
+      labels: plots.map((p) => p.name),
       datasets: [
         {
           label: npkOptions.find((n) => n.value === npkMetric)?.label || '',
-          data: seasonData?.plots.map((p: any) => p.nutrient_loss ? p.nutrient_loss[npkMetric] ?? 0 : 0) || [],
+          data: plots.map((p) =>
+            p.nutrient_loss && typeof p.nutrient_loss[npkMetric] === 'number'
+              ? p.nutrient_loss[npkMetric] ?? 0
+              : 0
+          ) || [],
           backgroundColor: 'rgba(22, 163, 74, 0.6)',
           borderColor: 'rgba(22, 163, 74, 1)',
           borderWidth: 1,
@@ -118,14 +133,19 @@ export default function DashboardPage() {
     };
   } else {
     chartData = {
-      labels: seasonData?.plots.map((p) => p.name),
+      labels: plots.map((p) => p.name),
       datasets: [
         {
           label: metricInfo?.label || '',
           data:
-            seasonData?.plots.map((p: any) => {
-              if (selectedMetric === 'sediment_soil_collected' || selectedMetric === 'yield_harvested') {
-                return convertToTha(p.measurements[selectedMetric]);
+            plots.map((p) => {
+              if (
+                selectedMetric === 'sediment_soil_collected' ||
+                selectedMetric === 'yield_harvested'
+              ) {
+                return p.measurements[selectedMetric] != null
+                  ? convertToTha(p.measurements[selectedMetric]!)
+                  : 0;
               }
               return p.measurements[selectedMetric] ?? 0;
             }) || [],
@@ -152,14 +172,14 @@ export default function DashboardPage() {
           size: 18,
         },
       },
-      // @ts-expect-error: datalabels is provided by chartjs-plugin-datalabels
+      
       datalabels: {
         anchor: 'end',
         align: 'end',
         color: '#222',
         font: { weight: 'bold', size: 14 },
         formatter: (value: number) => value,
-      } as any,
+      } as PluginOptionsByType<'bar'>['datalabels'],
     },
     scales: {
       y: {
@@ -253,7 +273,7 @@ export default function DashboardPage() {
                 <span className="font-semibold text-green-700">Nutrients Lost (kg/ha):</span>
                 <ul className="list-disc list-inside ml-4">
                   {npkOptions.map((n) => (
-                    <li key={n.value}>{n.label.split(' ')[0]}: {seasonData?.plots.map((p: any) => p.nutrient_loss?.[n.value] ?? 0).join(', ')}</li>
+                    <li key={n.value}>{n.label.split(' ')[0]}: {plots.map((p: any) => p.nutrient_loss?.[n.value] ?? 0).join(', ')}</li>
                   ))}
                 </ul>
               </div>
@@ -268,7 +288,7 @@ export default function DashboardPage() {
                   <div className="mt-6 bg-green-50 rounded-xl p-4 text-green-900">
                     <h4 className="font-bold mb-2">Final {npkOptions.find((n) => n.value === npkMetric)?.label} Lost per Cropping Type:</h4>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
-                      {seasonData?.plots.map((p: any) => (
+                      {plots.map((p: any) => (
                         <li key={p.name} className="flex justify-between"><span className="font-semibold">{p.name}:</span> <span>{p.nutrient_loss?.[npkMetric] ?? 0} mg/kg</span></li>
                       ))}
                     </ul>
