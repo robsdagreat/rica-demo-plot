@@ -1,0 +1,11 @@
+{
+  "season": "A-2025",
+  "plantingDate": "2024-09-23",
+  "systems": {
+    "CT-Monocropping": "Maize",
+    "CT-Intercropping": "Maize & Beans",
+    "CA-Rotation": "Maize",
+    "CA-Intercropping": "Maize & Beans",
+    "CA-Rotation-AntiErosion": "Maize and Napier as barrier"
+  }
+}

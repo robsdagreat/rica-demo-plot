@@ -1,0 +1,178 @@
+[
+  {
+    "season_name": "A-2025",
+    "planting_date": "2024-09-23",
+    "harvest_date": "2025-01-15",
+    "plots": [
+      {
+        "name": "CT-Monocropping",
+        "description": "Conventional tillage with maize monocropping. The soil is plowed and harrowed before planting, with crop residues removed.",
+        "crop": { "name": "Maize", "spacing": "75cm x 30cm" },
+        "inputs": { "npk_applied": 100, "urea_applied": 50, "dap_applied": 50 },
+        "measurements": {
+          "sediment_soil_collected": 183.6,
+          "yield_harvested": 140.96,
+          "beans_yield": null,
+          "earthworm_count": 10,
+          "organic_matter": 2.1,
+          "runoff_volume": 1500
+        },
+        "nutrient_loss": { "N": 20.5, "P": 5.2, "K": 10.1 }
+      },
+      {
+        "name": "CT-Intercropping",
+        "description": "Conventional Tillage with an intercrop of diverse crop species. Soil preparation is similar to CT-monocropping.",
+        "crop": { "name": "Maize & Beans", "spacing": "75cm x 30cm for Maize" },
+        "inputs": { "npk_applied": 100, "urea_applied": 50, "dap_applied": 50 },
+        "measurements": {
+          "sediment_soil_collected": 99,
+          "yield_harvested": 127.18,
+          "beans_yield": 5.5,
+          "earthworm_count": 15,
+          "organic_matter": 2.5,
+          "runoff_volume": 1200
+        },
+        "nutrient_loss": { "N": 15.3, "P": 4.1, "K": 8.2 }
+      },
+      {
+        "name": "CA-Rotation",
+        "description": "Conservation Agriculture with crop rotation. This plot uses zonal tillage and spot planting methods and maintains soil cover with mulch.",
+        "crop": { "name": "Maize", "spacing": "75cm x 30cm" },
+        "inputs": { "npk_applied": 80, "urea_applied": 40, "dap_applied": 40 },
+        "measurements": {
+          "sediment_soil_collected": 5.2,
+          "yield_harvested": 203.25,
+          "beans_yield": null,
+          "earthworm_count": 50,
+          "organic_matter": 4.2,
+          "runoff_volume": 300
+        },
+        "nutrient_loss": { "N": 2.1, "P": 0.5, "K": 1.5 }
+      },
+      {
+        "name": "CA-Intercropping",
+        "description": "Conservation Agriculture with an intercrop of diverse crop species, practicing zonal tillage and spot planting and mulching with crop residues.",
+        "crop": { "name": "Maize & Beans", "spacing": "75cm x 30cm for Maize" },
+        "inputs": { "npk_applied": 80, "urea_applied": 40, "dap_applied": 40 },
+        "measurements": {
+          "sediment_soil_collected": 3.75,
+          "yield_harvested": 214.01,
+          "beans_yield": 8,
+          "earthworm_count": 65,
+          "organic_matter": 4.8,
+          "runoff_volume": 250
+        },
+        "nutrient_loss": { "N": 1.5, "P": 0.3, "K": 1.1 }
+      },
+      {
+        "name": "CA-Rotation-AntiErosion",
+        "description": "CA with rotation, plus Napier grass strips planted along contours to act as anti-erosion barriers.",
+        "crop": { "name": "Maize and Napier as barrier", "spacing": "75cm x 30cm for Maize" },
+        "inputs": { "npk_applied": 80, "urea_applied": 40, "dap_applied": 40 },
+        "measurements": {
+          "sediment_soil_collected": 2.5,
+          "yield_harvested": 211.37,
+          "beans_yield": null,
+          "earthworm_count": 60,
+          "organic_matter": 4.6,
+          "runoff_volume": 150
+        },
+        "nutrient_loss": { "N": 1.1, "P": 0.2, "K": 0.9 }
+      }
+    ],
+    "total_rain": 351
+  },
+  {
+    "season_name": "B-2025",
+    "planting_date": "2025-03-15",
+    "harvest_date": "2025-07-10",
+    "plots": [
+      {
+        "name": "CT-Monocropping",
+        "description": "Conventional Tillage with Maize Monocropping. The soil is plowed and harrowed before planting, with crop residues removed.",
+        "crop": { "name": "Maize", "spacing": "75cm x 30cm" },
+        "inputs": { "npk_applied": 100, "urea_applied": 50, "dap_applied": 50 },
+        "measurements": {
+          "sediment_soil_collected": 31.004,
+          "yield_harvested": null,
+          "beans_yield": null,
+          "earthworm_count": 0,
+          "earthworm_count_tassel": 0,
+          "organic_matter": 2.31,
+          "ph": 5.85,
+          "runoff_volume": 1072
+        },
+        "nutrient_loss": { "N": null, "P": null, "K": null }
+      },
+      {
+        "name": "CT-Intercropping",
+        "description": "Conventional Tillage with an intercrop of Maize and Beans. Soil preparation is similar to monocropping.",
+        "crop": { "name": "Maize & Beans", "spacing": "75cm x 30cm for Maize" },
+        "inputs": { "npk_applied": 100, "urea_applied": 50, "dap_applied": 50 },
+        "measurements": {
+          "sediment_soil_collected": 14.182,
+          "yield_harvested": null,
+          "beans_yield": null,
+          "earthworm_count": 3,
+          "earthworm_count_tassel": 36,
+          "organic_matter": 3.93,
+          "ph": 5.98,
+          "runoff_volume": 1357
+        },
+        "nutrient_loss": { "N": null, "P": null, "K": null }
+      },
+      {
+        "name": "CA-Rotation",
+        "description": "Conservation Agriculture with crop rotation. This plot uses no-till methods and maintains soil cover with mulch. Soybeans were planted this season.",
+        "crop": { "name": "Soybeans", "spacing": "50cm x 10cm" },
+        "inputs": { "npk_applied": 60, "urea_applied": 20, "dap_applied": 30 },
+        "measurements": {
+          "sediment_soil_collected": 0.25,
+          "yield_harvested": null,
+          "beans_yield": null,
+          "earthworm_count": 40,
+          "earthworm_count_tassel": 21,
+          "organic_matter": 4.79,
+          "ph": 6.06,
+          "runoff_volume": 347
+        },
+        "nutrient_loss": { "N": null, "P": null, "K": null }
+      },
+      {
+        "name": "CA-Intercropping",
+        "description": "Conservation Agriculture with an intercrop of Maize and Beans, practicing no-till and mulching.",
+        "crop": { "name": "Maize & Beans", "spacing": "75cm x 30cm for Maize" },
+        "inputs": { "npk_applied": 80, "urea_applied": 40, "dap_applied": 40 },
+        "measurements": {
+          "sediment_soil_collected": 0.1,
+          "yield_harvested": null,
+          "beans_yield": null,
+          "earthworm_count": 46,
+          "earthworm_count_tassel": 33,
+          "organic_matter": 4.29,
+          "ph": 5.91,
+          "runoff_volume": 54.5
+        },
+        "nutrient_loss": { "N": null, "P": null, "K": null }
+      },
+      {
+        "name": "CA-Rotation-AntiErosion",
+        "description": "CA with rotation, plus Napier grass strips planted along contours to act as anti-erosion barriers. Soybeans were planted this season.",
+        "crop": { "name": "Soybeans and Napier as barrier", "spacing": "50cm x 10cm for Soybeans" },
+        "inputs": { "npk_applied": 60, "urea_applied": 20, "dap_applied": 30 },
+        "measurements": {
+          "sediment_soil_collected": 1.04,
+          "yield_harvested": null,
+          "beans_yield": null,
+          "earthworm_count": 40,
+          "earthworm_count_tassel": 33,
+          "organic_matter": 6.53,
+          "ph": 6.07,
+          "runoff_volume": 428
+        },
+        "nutrient_loss": { "N": null, "P": null, "K": null }
+      }
+    ],
+    "total_rain": 93.1
+  }
+] 

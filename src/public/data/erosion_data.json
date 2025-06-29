@@ -1,0 +1,22 @@
+[
+  {
+    "season": "A-2025",
+    "metrics": {
+      "CT-Monocropping": 183.6,
+      "CT-Intercropping": 99,
+      "CA-Rotation": 5.2,
+      "CA-Intercropping": 3.75,
+      "CA-Rotation-AntiErosion": 2.5
+    }
+  },
+  {
+    "season": "B-2025",
+    "metrics": {
+      "CT-Monocropping": 31.004,
+      "CT-Intercropping": 14.182,
+      "CA-Rotation": 0.25,
+      "CA-Intercropping": 0.1,
+      "CA-Rotation-AntiErosion": 1.04
+    }
+  }
+]
