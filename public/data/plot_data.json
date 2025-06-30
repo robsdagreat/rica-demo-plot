@@ -7,77 +7,72 @@
       {
         "name": "CT-Monocropping",
         "description": "Conventional tillage with maize monocropping. The soil is plowed and harrowed before planting, with crop residues removed.",
-        "crop": { "name": "Maize", "spacing": "75cm x 30cm" },
-        "inputs": { "npk_applied": 100, "urea_applied": 50, "dap_applied": 50 },
+        "crop": { "name": "Maize", "spacing": "75cm x 25cm" },
         "measurements": {
           "sediment_soil_collected": 183.6,
-          "yield_harvested": 140.96,
+          "maize_yield": 140.96,
           "beans_yield": null,
-          "earthworm_count": 10,
-          "organic_matter": 2.1,
-          "runoff_volume": 1500
+          "earthworm_count": null,
+          "organic_matter": null,
+          "runoff_volume": null
         },
-        "nutrient_loss": { "N": 20.5, "P": 5.2, "K": 10.1 }
+        "nutrient_loss": { "N": null, "P": null, "K": null }
       },
       {
         "name": "CT-Intercropping",
         "description": "Conventional Tillage with an intercrop of diverse crop species. Soil preparation is similar to CT-monocropping.",
-        "crop": { "name": "Maize & Beans", "spacing": "75cm x 30cm for Maize" },
-        "inputs": { "npk_applied": 100, "urea_applied": 50, "dap_applied": 50 },
+        "crop": { "name": "Maize & Beans", "spacing": "75cm x 25cm for Maize" },
         "measurements": {
           "sediment_soil_collected": 99,
-          "yield_harvested": 127.18,
-          "beans_yield": 5.5,
-          "earthworm_count": 15,
-          "organic_matter": 2.5,
-          "runoff_volume": 1200
+          "maize_yield": 127.18,
+          "beans_yield": 10.30,
+          "earthworm_count": null,
+          "organic_matter": null,
+          "runoff_volume": null
         },
-        "nutrient_loss": { "N": 15.3, "P": 4.1, "K": 8.2 }
+        "nutrient_loss": { "N": null, "P": null, "K": null }
       },
       {
         "name": "CA-Rotation",
         "description": "Conservation Agriculture with crop rotation. This plot uses zonal tillage and spot planting methods and maintains soil cover with mulch.",
-        "crop": { "name": "Maize", "spacing": "75cm x 30cm" },
-        "inputs": { "npk_applied": 80, "urea_applied": 40, "dap_applied": 40 },
+        "crop": { "name": "Maize", "spacing": "75cm x 25cm" },
         "measurements": {
           "sediment_soil_collected": 5.2,
-          "yield_harvested": 203.25,
+          "maize_yield": 203.25,
           "beans_yield": null,
-          "earthworm_count": 50,
-          "organic_matter": 4.2,
-          "runoff_volume": 300
+          "earthworm_count": null,
+          "organic_matter": null,
+          "runoff_volume": null
         },
-        "nutrient_loss": { "N": 2.1, "P": 0.5, "K": 1.5 }
+        "nutrient_loss": { "N": null, "P": null, "K": null }
       },
       {
         "name": "CA-Intercropping",
         "description": "Conservation Agriculture with an intercrop of diverse crop species, practicing zonal tillage and spot planting and mulching with crop residues.",
-        "crop": { "name": "Maize & Beans", "spacing": "75cm x 30cm for Maize" },
-        "inputs": { "npk_applied": 80, "urea_applied": 40, "dap_applied": 40 },
+        "crop": { "name": "Maize & Beans", "spacing": "75cm x 25cm for Maize" },
         "measurements": {
           "sediment_soil_collected": 3.75,
-          "yield_harvested": 214.01,
-          "beans_yield": 8,
-          "earthworm_count": 65,
-          "organic_matter": 4.8,
-          "runoff_volume": 250
+          "maize_yield": 214.01,
+          "beans_yield": 15.7,
+          "earthworm_count": null,
+          "organic_matter": null,
+          "runoff_volume": null
         },
-        "nutrient_loss": { "N": 1.5, "P": 0.3, "K": 1.1 }
+        "nutrient_loss": { "N": null, "P": null, "K": null }
       },
       {
         "name": "CA-Rotation-AntiErosion",
         "description": "CA with rotation, plus Napier grass strips planted along contours to act as anti-erosion barriers.",
-        "crop": { "name": "Maize and Napier as barrier", "spacing": "75cm x 30cm for Maize" },
-        "inputs": { "npk_applied": 80, "urea_applied": 40, "dap_applied": 40 },
+        "crop": { "name": "Maize and Napier as barrier", "spacing": "75cm x 25cm for Maize" },
         "measurements": {
           "sediment_soil_collected": 2.5,
-          "yield_harvested": 211.37,
+          "maize_yield": 211.37,
           "beans_yield": null,
-          "earthworm_count": 60,
-          "organic_matter": 4.6,
-          "runoff_volume": 150
+          "earthworm_count": null,
+          "organic_matter": null,
+          "runoff_volume": null
         },
-        "nutrient_loss": { "N": 1.1, "P": 0.2, "K": 0.9 }
+        "nutrient_loss": { "N": null, "P": null, "K": null }
       }
     ],
     "total_rain": 351
@@ -90,87 +85,78 @@
       {
         "name": "CT-Monocropping",
         "description": "Conventional Tillage with Maize Monocropping. The soil is plowed and harrowed before planting, with crop residues removed.",
-        "crop": { "name": "Maize", "spacing": "75cm x 30cm" },
-        "inputs": { "npk_applied": 100, "urea_applied": 50, "dap_applied": 50 },
+        "crop": { "name": "Maize", "spacing": "75cm x 25cm" },
         "measurements": {
           "sediment_soil_collected": 31.004,
-          "yield_harvested": null,
+          "maize_yield": null,
           "beans_yield": null,
-          "earthworm_count": 0,
-          "earthworm_count_tassel": 0,
-          "organic_matter": 2.31,
-          "ph": 5.85,
-          "runoff_volume": 1072
+          "earthworm_count_at_tasseling_stage": 0,
+          "organic_matter_within_plot": 2.31,
+          "ph_within_plot": 5.85,
+          "runoff_volume": 1068
         },
-        "nutrient_loss": { "N": null, "P": null, "K": null }
+        "nutrient_loss": { "N": null, "P": 513.31, "K": 13711.66 }
       },
       {
         "name": "CT-Intercropping",
         "description": "Conventional Tillage with an intercrop of Maize and Beans. Soil preparation is similar to monocropping.",
-        "crop": { "name": "Maize & Beans", "spacing": "75cm x 30cm for Maize" },
-        "inputs": { "npk_applied": 100, "urea_applied": 50, "dap_applied": 50 },
+        "crop": { "name": "Maize & Beans", "spacing": "75cm x 25cm for Maize" },
         "measurements": {
           "sediment_soil_collected": 14.182,
-          "yield_harvested": null,
+          "maize_yield": null,
           "beans_yield": null,
-          "earthworm_count": 3,
-          "earthworm_count_tassel": 36,
-          "organic_matter": 3.93,
-          "ph": 5.98,
-          "runoff_volume": 1357
+          "earthworm_count_at_tasseling_stage": 0,
+          "organic_matter_within_plot": 3.93,
+          "ph_within_plot": 5.98,
+          "runoff_volume": 1354
         },
-        "nutrient_loss": { "N": null, "P": null, "K": null }
+        "nutrient_loss": { "N": null, "P": 304.16, "K": 9107.17 }
       },
       {
         "name": "CA-Rotation",
         "description": "Conservation Agriculture with crop rotation. This plot uses no-till methods and maintains soil cover with mulch. Soybeans were planted this season.",
-        "crop": { "name": "Soybeans", "spacing": "50cm x 10cm" },
-        "inputs": { "npk_applied": 60, "urea_applied": 20, "dap_applied": 30 },
+        "crop": { "name": "Soybeans", "spacing": "50cm x 25cm" },
+  
         "measurements": {
           "sediment_soil_collected": 0.25,
-          "yield_harvested": null,
+          "maize_harvested": null,
           "beans_yield": null,
-          "earthworm_count": 40,
-          "earthworm_count_tassel": 21,
-          "organic_matter": 4.79,
-          "ph": 6.06,
+          "earthworm_count__at_tasseling_stage": 24000,
+          "organic_matter_within_plot": 4.79,
+          "ph_within_plot": 6.06,
           "runoff_volume": 347
         },
-        "nutrient_loss": { "N": null, "P": null, "K": null }
+        "nutrient_loss": { "N": null, "P": 17.51, "K": 1575.86 }
       },
       {
         "name": "CA-Intercropping",
         "description": "Conservation Agriculture with an intercrop of Maize and Beans, practicing no-till and mulching.",
-        "crop": { "name": "Maize & Beans", "spacing": "75cm x 30cm for Maize" },
-        "inputs": { "npk_applied": 80, "urea_applied": 40, "dap_applied": 40 },
+        "crop": { "name": "Maize & Beans", "spacing": "75cm x 25cm for Maize" },
         "measurements": {
           "sediment_soil_collected": 0.1,
-          "yield_harvested": null,
+          "maize_harvested": null,
           "beans_yield": null,
-          "earthworm_count": 46,
-          "earthworm_count_tassel": 33,
-          "organic_matter": 4.29,
-          "ph": 5.91,
-          "runoff_volume": 54.5
+          "earthworm_count_at_tasseling_stage": 14000,
+          "organic_matter_within_plot": 4.29,
+          "ph_within_plot": 5.91,
+          "runoff_volume": 53
         },
-        "nutrient_loss": { "N": null, "P": null, "K": null }
+        "nutrient_loss": { "N": null, "P": 3.66, "K": 610.35 }
       },
       {
         "name": "CA-Rotation-AntiErosion",
         "description": "CA with rotation, plus Napier grass strips planted along contours to act as anti-erosion barriers. Soybeans were planted this season.",
-        "crop": { "name": "Soybeans and Napier as barrier", "spacing": "50cm x 10cm for Soybeans" },
-        "inputs": { "npk_applied": 60, "urea_applied": 20, "dap_applied": 30 },
+        "crop": { "name": "Soybeans and Napier as barrier", "spacing": "75cm x 25cm for Maize" },
         "measurements": {
           "sediment_soil_collected": 1.04,
-          "yield_harvested": null,
+          "maize_harvested": null,
           "beans_yield": null,
-          "earthworm_count": 40,
-          "earthworm_count_tassel": 33,
-          "organic_matter": 6.53,
-          "ph": 6.07,
-          "runoff_volume": 428
+          "earthworm_count_at_tasseling_stage": 22000,
+          "organic_matter_within_plot": 6.53,
+          "ph_within_plot": 6.07,
+          "runoff_volume": 422
         },
-        "nutrient_loss": { "N": null, "P": null, "K": null }
+        "nutrient_loss": { "N": null, "P": 24.77, "K": 3654.73}
       }
     ],
     "total_rain": 93.1

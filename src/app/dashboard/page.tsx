@@ -9,7 +9,7 @@ interface PlotData {
   name: string;
   description: string;
   crop: { name: string; spacing: string };
-  inputs: { npk_applied: number; urea_applied: number; dap_applied: number };
+  inputs?: { npk_applied: number; urea_applied: number; dap_applied: number };
   measurements: Record<string, number | null>;
   nutrient_loss: Record<string, number | null>;
 }
@@ -35,6 +35,8 @@ const BASELINE = {
   plots: [
     {
       name: 'CT-Monocropping',
+      description: 'Baseline for Conventional Tillage with Maize Monocropping',
+      crop: { name: 'Maize', spacing: '-' },
       measurements: {
         sediment_soil_collected: 10, // lower erosion
         yield_harvested: 0,
@@ -47,6 +49,8 @@ const BASELINE = {
     },
     {
       name: 'CT-Intercropping',
+      description: 'Baseline for Conventional Tillage with Intercropping',
+      crop: { name: 'Maize & Beans', spacing: '-' },
       measurements: {
         sediment_soil_collected: 8,
         yield_harvested: 0,
@@ -59,6 +63,8 @@ const BASELINE = {
     },
     {
       name: 'CA-Rotation',
+      description: 'Baseline for Conservation Agriculture with Rotation',
+      crop: { name: 'Soybeans', spacing: '-' },
       measurements: {
         sediment_soil_collected: 2,
         yield_harvested: 0,
@@ -71,6 +77,8 @@ const BASELINE = {
     },
     {
       name: 'CA-Intercropping',
+      description: 'Baseline for Conservation Agriculture with Intercropping',
+      crop: { name: 'Maize & Beans', spacing: '-' },
       measurements: {
         sediment_soil_collected: 1.5,
         yield_harvested: 0,
@@ -83,6 +91,8 @@ const BASELINE = {
     },
     {
       name: 'CA-Rotation-AntiErosion',
+      description: 'Baseline for CA with Rotation and Anti-Erosion strips',
+      crop: { name: 'Soybeans and Napier', spacing: '-' },
       measurements: {
         sediment_soil_collected: 1,
         yield_harvested: 0,
@@ -106,6 +116,42 @@ export default function DashboardPage() {
   const allSeasons = [BASELINE, ...plotData];
   const seasonData = allSeasons.find((s) => s.season_name === selectedSeason);
   const metricInfo = metricOptions.find((m) => m.value === selectedMetric);
+
+  const getMeasurement = (measurements: Record<string, number | null>, metric: string): number | null => {
+    if (!measurements) return null;
+
+    const get = (keys: string[]): number | null => {
+        for (const key of keys) {
+            if (measurements[key] != null) {
+                return measurements[key];
+            }
+        }
+        return null;
+    };
+
+    switch (metric) {
+        case 'yield_harvested': {
+            const keys = ['maize_yield', 'beans_yield', 'maize_harvested'];
+            let totalYield = 0;
+            let aValueWasFound = false;
+            for (const key of keys) {
+                if (measurements[key] != null) {
+                    totalYield += measurements[key]!;
+                    aValueWasFound = true;
+                }
+            }
+            return aValueWasFound ? totalYield : null;
+        }
+        case 'organic_matter':
+            return get(['organic_matter', 'organic_matter_within_plot']);
+
+        case 'earthworm_count':
+            return get(['earthworm_count', 'earthworm_count_at_tasseling_stage', 'earthworm_count__at_tasseling_stage']);
+        
+        default:
+            return get([metric]);
+    }
+  };
 
   const plots = (seasonData?.plots ?? []) as PlotData[];
 
@@ -139,15 +185,16 @@ export default function DashboardPage() {
           label: metricInfo?.label || '',
           data:
             plots.map((p) => {
+              const value = getMeasurement(p.measurements, selectedMetric);
               if (
                 selectedMetric === 'sediment_soil_collected' ||
                 selectedMetric === 'yield_harvested'
               ) {
-                return p.measurements[selectedMetric] != null
-                  ? convertToTha(p.measurements[selectedMetric]!)
+                return value != null
+                  ? convertToTha(value)
                   : 0;
               }
-              return p.measurements[selectedMetric] ?? 0;
+              return value ?? 0;
             }) || [],
           backgroundColor: 'rgba(22, 163, 74, 0.6)',
           borderColor: 'rgba(22, 163, 74, 1)',
