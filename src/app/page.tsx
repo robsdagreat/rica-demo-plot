@@ -22,22 +22,22 @@ export default function Home() {
   // Slideshow data
   const slides = [
     {
-      image: '/hero.jpg',
+      image: '/Hero1.jpeg',
       headline: 'Conservation Agriculture Demonstration Area at RICA',
       subtext: 'A digital window into our demonstration plot, offering real-time seasonal data, crop updates, and soil health metrics.'
     },
     {
-      image: '/hero2.jpg',
+      image: '/Hero2.jpeg',
       headline: 'Comparing Agricultural Practices',
       subtext: 'Explore the benefits of Conservation Agriculture (CA) vs. Conventional Tillage (CT) in real field conditions.'
     },
     {
-      image: '/hero3.jpg',
+      image: '/Hero3.jpeg',
       headline: 'Soil Health & Erosion Control',
       subtext: 'Our plots focus on improving soil health, reducing erosion, and achieving sustainable yields.'
     },
     {
-      image: '/hero4.jpg',
+      image: '/Hero4.jpeg',
       headline: 'Innovation in Farming',
       subtext: 'From crop rotation to intercropping and anti-erosion barriers, see how innovation shapes the future of farming at RICA.'
     },
@@ -81,7 +81,7 @@ export default function Home() {
         <section className="max-w-6xl mx-auto my-16 px-2">
           <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row animate-fade-in-up w-full min-h-[320px]">
             <div className="md:w-1/2 w-full h-56 md:h-auto relative min-h-[220px]">
-              <Image src="/hero2.jpg" alt="History & Purpose" fill className="object-cover object-center w-full h-full" />
+              <Image src="/History and purpose.jpeg" alt="History & Purpose" fill className="object-cover object-center w-full h-full" />
             </div>
             <div className="p-10 flex-1 flex flex-col justify-center">
               <h3 className="text-2xl font-bold text-green-800 mb-2">History & Purpose</h3>
@@ -102,11 +102,12 @@ export default function Home() {
           <h3 className="text-2xl font-bold text-green-800 mb-4">Experimental Plots</h3>
           <div className="flex gap-6 overflow-x-auto pb-2 animate-slide-in-x">
             {plotData[0].plots.map((plot, idx) => {
-              let img = "/hero3.jpg";
-              if (plot.name === "CT-Intercropping") img = "/CT-Intercropping.webp";
-              if (plot.name === "CA-Rotation") img = "/CA-rop rotation.webp";
-              if (plot.name === "CA-Intercropping") img = "/Intercropping.jpg";
-              if (plot.name === "CA-Rotation-AntiErosion") img = "/CA-rotation-strip.webp";
+              let img = "/Monocropping.jpeg"; // Default fallback
+              if (plot.name === "CT-Monocropping") img = "/Monocropping.jpeg";
+              if (plot.name === "CT-Intercropping") img = "/CT-intercropping.jpeg";
+              if (plot.name === "CA-Rotation") img = "/CA-rotation.jpeg";
+              if (plot.name === "CA-Intercropping") img = "/CA-intercropping.jpeg";
+              if (plot.name === "CA-Rotation-AntiErosion") img = "/CA-Rotation-AntiErosion.jpeg";
               return (
                 <div key={plot.name} className="relative min-w-[260px] max-w-xs h-64 rounded-2xl shadow-lg overflow-hidden group transform transition duration-300 hover:scale-105" style={{ animationDelay: `${idx * 0.12}s` }}>
                   <Image src={img} alt={plot.name} fill className="object-cover object-center w-full h-full group-hover:brightness-75 transition" />
@@ -122,11 +123,11 @@ export default function Home() {
         </section>
         {/* Video Section */}
         <section className="max-w-5xl mx-auto my-12 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-green-700 mb-6">See the Plot in Action</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-green-700 mb-6">See the Conservation Agriculture in Action</h2>
           <div className="aspect-video bg-black rounded-xl shadow-lg overflow-hidden">
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              src="https://www.youtube.com/embed/mhol3SCH9Hw?si=8-ODoVFwKLyhAn0K"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
